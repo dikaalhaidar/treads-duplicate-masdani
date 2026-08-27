@@ -3,11 +3,10 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
 import Profile from "./pages/Profile";
-
 import initialPosts from "./data/posts";
 import initialActions from "./data/action";
 import actionTypes from "./data/actionType";
-
+const currentProfileId = 3;
 function App() {
   const [posts, setPosts] = useState(initialPosts);
   const [actions, setActions] = useState(initialActions);
@@ -18,7 +17,7 @@ function App() {
         (item) =>
           item.postId === postId &&
           item.actionTypeId === actionTypeId &&
-          item.profileId === 1
+          item.profileId === currentProfileId
       );
 
       if (existingAction) {
@@ -33,7 +32,7 @@ function App() {
           actionId: Date.now(),
           actionTypeId,
           postId,
-          profileId: 1,
+          profileId: currentProfileId,
         },
       ];
     });
@@ -43,7 +42,7 @@ function App() {
 
     const newPost = {
       postId: Date.now(),
-      profileId: 1,
+      profileId: currentProfileId,
       desc: content,
       likes: 0,
       liked: false,
@@ -71,6 +70,7 @@ function App() {
                 posts={posts}
                 actions={actions}
                 actionTypes={actionTypes}
+                currentProfileId={currentProfileId}
                 onAddPost={handleAddPost}
                 onAction={handleAction}
               />
@@ -85,6 +85,7 @@ function App() {
                 actions={actions}
                 actionTypes={actionTypes}
                 onAction={handleAction}
+                currentProfileId={currentProfileId}
               />
             }
           />

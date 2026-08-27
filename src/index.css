@@ -56,7 +56,7 @@ textarea {
     background: #fff;
     color: #000;
     border-radius: 8px;
-    font-size: 14px;
+    font-size: 23px;
     font-weight: bold;
 }
 
@@ -524,5 +524,4 @@ textarea {
         padding: 16px 8px;
         border: none;
     }
-
 }

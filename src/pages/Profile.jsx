@@ -1,12 +1,12 @@
 import PostCard from "../components/PostCard";
 import profiles from "../data/profiles";
 
-function Profile({ posts, actions, actionTypes, onAction }) {
+function Profile({ posts, actions, actionTypes, onAction, currentProfileId }) {
     const profile = profiles.profile.find(
-        (item) => item.profileId === 1
+        (item) => item.profileId === 3
     );
     const myPosts = posts.filter(
-        (post) => post.profileId === 1
+        (post) => post.profileId === 3
     );
     return (
         <main className="page-container">
@@ -56,11 +56,11 @@ function Profile({ posts, actions, actionTypes, onAction }) {
                         actions={actions}
                         actionTypes={actionTypes}
                         onAction={onAction}
+                        currentProfileId={currentProfileId}
                         />
                 ))}
             </section>
         </main>
     );
 }
-
 export default Profile;

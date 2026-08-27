@@ -1,17 +1,15 @@
 import PostForm from "../components/PostForm";
 import PostCard from "../components/PostCard";
 
-function Home({ posts, actions, actionTypes, onAddPost, onAction }) {
+function Home({ posts, actions, actionTypes, currentProfileId, onAddPost, onAction }) {
     return (
         <main className="page-container home-page">
-
             <section className="page-header">
                 <h1>Home</h1>
                 <p>Your timeline</p>
             </section>
-            <PostForm onAddPost={onAddPost} />
+            <PostForm profileId={currentProfileId} onAddPost={onAddPost} />
             <section className="timeline">
-
                 {posts.map((post) => (
                     <PostCard
                         key={post.postId}
@@ -19,6 +17,7 @@ function Home({ posts, actions, actionTypes, onAddPost, onAction }) {
                         actions={actions}
                         actionTypes={actionTypes}
                         onAction={onAction}
+                        currentProfileId={currentProfileId}
                     />
                 ))}
             </section>

@@ -7,7 +7,7 @@ const actionIcons = {
     Share: { active: <FaShare />, inactive: <FaShare /> },
 };
 
-function PostCard({ post, actions, actionTypes, onAction }) {
+function PostCard({ post, actions, actionTypes, onAction, currentProfileId }) {
     const profile = profiles.profile.find(
         (item) => item.profileId === post.profileId
     );
@@ -41,7 +41,7 @@ function PostCard({ post, actions, actionTypes, onAction }) {
                         const isActive = postActions.some(
                             (action) =>
                                 action.actionTypeId === actionType.actionTypeId &&
-                                action.profileId === 1
+                                action.profileId === currentProfileId
                         );
                         const icon = actionIcons[actionType.actionTypeName];
 

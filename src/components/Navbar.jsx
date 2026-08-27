@@ -12,6 +12,7 @@ function Navbar() {
                     <span>Threads</span>
                 </Link>
 
+                
                 <div className="nav-menu">
                     <Link
                         to="/"
@@ -30,13 +31,12 @@ function Navbar() {
                             location.pathname === "/profile"
                                 ? "nav-link active"
                                 : "nav-link"
-                        }
+                            }
                     >
                         <FaUser />
                         <span>Profil</span>
                     </Link>
                 </div>
-
                 <div className="nav-footer">
                     <button className="nav-link logout-btn">
                         <span>Logout</span>

@@ -1,7 +1,11 @@
 import { useState } from "react";
+import profiles from "../data/profiles";
 
-function PostForm({ onAddPost }) {
+function PostForm({ profileId, onAddPost }) {
     const [content, setContent] = useState("");
+    const profile = profiles.profile.find(
+        (item) => item.profileId === profileId
+    );
     const handleSubmit = (event) => {
         event.preventDefault();
         if (!content.trim()) {
@@ -13,7 +17,7 @@ function PostForm({ onAddPost }) {
     return (
         <form className="post-form" onSubmit={handleSubmit}>
             <div className="avatar">
-                D
+                {profile?.profileName?.charAt(0) || "U"}
             </div>
             <div className="post-form-content">
 
