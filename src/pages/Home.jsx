@@ -3,7 +3,7 @@ import PostCard from "../components/PostCard";
 
 function Home({ posts, actions, actionTypes, onAddPost, onAction }) {
     return (
-        <main className="page-container">
+        <main className="page-container home-page">
 
             <section className="page-header">
                 <h1>Home</h1>
