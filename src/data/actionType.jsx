@@ -1,0 +1,16 @@
+const actionType = [
+    {
+        actionTypeId: 1,
+        actionTypeName: "Like",
+    },
+    {
+        actionTypeId: 2,
+        actionTypeName: "Repost",
+    },
+    {
+        actionTypeId: 3,
+        actionTypeName: "Share",
+    },
+];
+
+export default actionType;
