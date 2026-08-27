@@ -49,7 +49,11 @@ function PostCard({ post, actions, actionTypes, onAction }) {
                             <button
                                 key={actionType.actionTypeId}
                                 onClick={() => onAction(post.postId, actionType.actionTypeId)}
-                                className={isActive ? "action-button liked" : "action-button"}
+                                className={
+                                    isActive
+                                        ? `action-button ${actionType.actionTypeName.toLowerCase()}`
+                                        : "action-button"
+                                }
                                 aria-label={actionType.actionTypeName}
                             >
                                 {isActive ? icon.active : icon.inactive}

@@ -10,6 +10,7 @@ body {
     color: #fff;
 }
 
+
 button,
 textarea {
     font-family: inherit;
@@ -325,8 +326,16 @@ textarea {
     color: #000;
 }
 
-.action-button.liked {
+.action-button.like {
     color: #f91880;
+}
+
+.action-button.repost {
+    color: #00ba7c;
+}
+
+.action-button.share {
+    color: #1d9bf0;
 }
 
 .action-button svg {
@@ -420,8 +429,6 @@ textarea {
 .profile-stats strong {
     font-weight: 600;
 }
-
-/* PROFILE TABS */
 
 .profile-tabs {
     display: flex;
