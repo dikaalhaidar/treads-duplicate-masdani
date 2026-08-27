@@ -236,6 +236,12 @@ textarea {
     flex-direction: column;
 }
 
+.timeline-title {
+    padding: 16px 0 8px;
+    font-size: 18px;
+    font-weight: 700;
+}
+
 .post-card {
     padding: 16px 12px;
     border-bottom: 1px solid #262626;
@@ -314,7 +320,7 @@ textarea {
     transition: color 0.2s;
     padding: 0;
 }
-fff
+
 .action-button:hover {
     color: #000;
 }

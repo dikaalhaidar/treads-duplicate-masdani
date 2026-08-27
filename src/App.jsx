@@ -11,7 +11,7 @@ import actionTypes from "./data/actionType";
 function App() {
   const [posts, setPosts] = useState(initialPosts);
   const [actions, setActions] = useState(initialActions);
-
+  
   const handleAction = (postId, actionTypeId) => {
     setActions((currentActions) => {
       const existingAction = currentActions.find(
@@ -62,33 +62,34 @@ function App() {
 
       <Navbar />
 
-      <Routes>
+      <div className="app-main">
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <Home
+                posts={posts}
+                actions={actions}
+                actionTypes={actionTypes}
+                onAddPost={handleAddPost}
+                onAction={handleAction}
+              />
+            }
+          />
 
-        <Route
-          path="/"
-          element={
-            <Home
-              posts={posts}
-              actions={actions}
-              actionTypes={actionTypes}
-              onAddPost={handleAddPost}
-              onAction={handleAction}
-            />
-          }
-        />
-
-        <Route
-          path="/profile"
-          element={
-            <Profile
-              posts={posts}
-              actions={actions}
-              actionTypes={actionTypes}
-              onAction={handleAction}
-            />
-          }
-        />
-      </Routes>
+          <Route
+            path="/profile"
+            element={
+              <Profile
+                posts={posts}
+                actions={actions}
+                actionTypes={actionTypes}
+                onAction={handleAction}
+              />
+            }
+          />
+        </Routes>
+      </div>
     </BrowserRouter>
   );
 }

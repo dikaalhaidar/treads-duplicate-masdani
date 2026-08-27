@@ -45,7 +45,7 @@ function Profile({ posts, actions, actionTypes, onAction }) {
                     Replies
                 </button>
                 <button className="tab">
-                    Media
+                    Postingan
                 </button>
             </div>
             <section className="timeline">
@@ -56,7 +56,7 @@ function Profile({ posts, actions, actionTypes, onAction }) {
                         actions={actions}
                         actionTypes={actionTypes}
                         onAction={onAction}
-                    />
+                        />
                 ))}
             </section>
         </main>
