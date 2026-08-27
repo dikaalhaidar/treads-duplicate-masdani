@@ -2,6 +2,7 @@ const posts = [
      {
       "postId": 1,
       "profileId": 1,
+      
       "desc": "bali bali~~ bali bali~~ jogjaaaa",
       "timestamp": "2026-08-20T08:30:00Z"
     },

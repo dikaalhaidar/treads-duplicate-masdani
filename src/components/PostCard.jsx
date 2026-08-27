@@ -19,7 +19,11 @@ function PostCard({ post, actions, actionTypes, onAction, currentProfileId }) {
         <article className="post-card">
             <div className="post-avatar">
                 <div className="avatar">
-                    {profile?.profileName?.charAt(0) || "U"}
+                    {profile?.imageUrl ? (
+                        <img src={profile.imageUrl} alt={profile.profileName} />
+                    ) : (
+                        profile?.profileName?.charAt(0) || "U"
+                    )}
                 </div>
             </div>
             
@@ -27,6 +31,13 @@ function PostCard({ post, actions, actionTypes, onAction, currentProfileId }) {
                 <div className="post-meta">
                     <h3>{profile?.profileName || "Unknown"}</h3>
                     <span>@{profile?.profileName?.toLowerCase().replaceAll(" ", "") || "unknown"}</span>
+                    <time dateTime={post.timestamp}>
+                        {new Date(post.timestamp).toLocaleDateString("id-ID", {
+                            day: "numeric",
+                            month: "short",
+                            year: "numeric",
+                        })}
+                    </time>
                 </div>
                 
                 <p className="post-content">

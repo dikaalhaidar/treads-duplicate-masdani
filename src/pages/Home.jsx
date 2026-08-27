@@ -2,6 +2,11 @@ import PostForm from "../components/PostForm";
 import PostCard from "../components/PostCard";
 
 function Home({ posts, actions, actionTypes, currentProfileId, onAddPost, onAction }) {
+    const sortedPosts = [...posts].sort(
+        (firstPost, secondPost) =>
+            new Date(secondPost.timestamp) - new Date(firstPost.timestamp)
+    );
+
     return (
         <main className="page-container home-page">
             <section className="page-header">
@@ -10,7 +15,7 @@ function Home({ posts, actions, actionTypes, currentProfileId, onAddPost, onActi
             </section>
             <PostForm profileId={currentProfileId} onAddPost={onAddPost} />
             <section className="timeline">
-                {posts.map((post) => (
+                {sortedPosts.map((post) => (
                     <PostCard
                         key={post.postId}
                         post={post}

@@ -10,14 +10,18 @@ function PostForm({ profileId, onAddPost }) {
         event.preventDefault();
         if (!content.trim()) {
             return;
-        }
+         }
         onAddPost(content);
         setContent("");
     };
     return (
         <form className="post-form" onSubmit={handleSubmit}>
             <div className="avatar">
-                {profile?.profileName?.charAt(0) || "U"}
+                {profile?.imageUrl ? (
+                    <img src={profile.imageUrl} alt={profile.profileName} />
+                ) : (
+                    profile?.profileName?.charAt(0) || "U"
+                )}
             </div>
             <div className="post-form-content">
 

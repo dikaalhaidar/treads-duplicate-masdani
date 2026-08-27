@@ -3,10 +3,13 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
 import Profile from "./pages/Profile";
+
 import initialPosts from "./data/posts";
 import initialActions from "./data/action";
 import actionTypes from "./data/actionType";
+
 const currentProfileId = 3;
+
 function App() {
   const [posts, setPosts] = useState(initialPosts);
   const [actions, setActions] = useState(initialActions);
@@ -25,6 +28,8 @@ function App() {
           (item) => item.actionId !== existingAction.actionId
         );
       }
+
+
 
       return [
         ...currentActions,
@@ -56,11 +61,11 @@ function App() {
     ]);
   };
 
+
+  
   return (
     <BrowserRouter>
-
       <Navbar />
-
       <div className="app-main">
         <Routes>
           <Route
@@ -84,8 +89,8 @@ function App() {
                 posts={posts}
                 actions={actions}
                 actionTypes={actionTypes}
-                onAction={handleAction}
                 currentProfileId={currentProfileId}
+                onAction={handleAction}
               />
             }
           />

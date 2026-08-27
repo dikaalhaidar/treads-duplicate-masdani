@@ -3,11 +3,13 @@ import profiles from "../data/profiles";
 
 function Profile({ posts, actions, actionTypes, onAction, currentProfileId }) {
     const profile = profiles.profile.find(
-        (item) => item.profileId === 3
+        (item) => item.profileId === currentProfileId
     );
-    const myPosts = posts.filter(
-        (post) => post.profileId === 3
-    );
+    const myPosts = posts
+        .filter((post) => post.profileId === currentProfileId)
+        .sort((firstPost, secondPost) =>
+            new Date(secondPost.timestamp) - new Date(firstPost.timestamp)
+        );
     return (
         <main className="page-container">
             <section className="profile-header">
