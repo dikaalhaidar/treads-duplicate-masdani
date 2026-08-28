@@ -34,7 +34,7 @@ function PostCard({ post, actions, actionTypes, onAction, currentProfileId }) {
                     <time dateTime={post.timestamp}>
                         {new Date(post.timestamp).toLocaleDateString("id-ID", {
                             day: "numeric",
-                            month: "short",
+                            month: "long",
                             year: "numeric",
                         })}
                     </time>
@@ -43,7 +43,6 @@ function PostCard({ post, actions, actionTypes, onAction, currentProfileId }) {
                 <p className="post-content">
                     {post.desc}
                 </p>
-                
                 <div className="post-actions">
                     {actionTypes.map((actionType) => {
                         const actionCount = postActions.filter(
@@ -55,7 +54,6 @@ function PostCard({ post, actions, actionTypes, onAction, currentProfileId }) {
                                 action.profileId === currentProfileId
                         );
                         const icon = actionIcons[actionType.actionTypeName];
-
                         return (
                             <button
                                 key={actionType.actionTypeId}

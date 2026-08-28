@@ -7,7 +7,7 @@ const action = [
     },
     {
         actionId: 2,
-        actionTypeId: 1,
+        actionTypeId: 2,
         postId: 1,
         profileId: 2,
     },
@@ -143,6 +143,7 @@ const action = [
         postId: 12,
         profileId: 4,
     },
+    
 ];
 
 export default action;

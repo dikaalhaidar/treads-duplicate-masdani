@@ -30,7 +30,6 @@ function App() {
       }
 
 
-
       return [
         ...currentActions,
         {
@@ -54,6 +53,7 @@ function App() {
       comments: 0,
       timestamp: new Date().toISOString(),
     };
+    
 
     setPosts((currentPosts) => [
       newPost,
@@ -62,7 +62,6 @@ function App() {
   };
 
 
-  
   return (
     <BrowserRouter>
       <Navbar />
@@ -81,7 +80,6 @@ function App() {
               />
             }
           />
-
           <Route
             path="/profile"
             element={

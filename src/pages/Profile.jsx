@@ -22,20 +22,23 @@ function Profile({ posts, actions, actionTypes, onAction, currentProfileId }) {
                 </div>
                 <div className="profile-info">
                     <h1>{profile?.profileName || "Unknown"}</h1>
-                    <p>@{profile?.profileName?.toLowerCase().replaceAll(" ", "") || "unknown"}</p>
-                    <span>{profile?.desc || ""}</span>
+                    <p>{profile?.desc || ""}</p>
+                    <span>
+                        @{profile?.profileName?.toLowerCase().replaceAll(" ", "") || "unknown"}
+                    </span>
                 </div>
+               
                 <button className="edit-profile">
                     Edit Profile
                 </button>
             </section>
             <div className="profile-stats">
                 <div>
-                    <strong>128</strong>
+                    <strong>1280</strong>
                     <span>Followers</span>
                 </div>
                 <div>
-                    <strong>56</strong>
+                    <strong>560</strong>
                     <span>Following</span>
                 </div>
             </div>
@@ -47,7 +50,7 @@ function Profile({ posts, actions, actionTypes, onAction, currentProfileId }) {
                     Replies
                 </button>
                 <button className="tab">
-                    Postingan
+                    Media
                 </button>
             </div>
             <section className="timeline">

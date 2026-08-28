@@ -24,6 +24,8 @@ function Home({ posts, actions, actionTypes, currentProfileId, onAddPost, onActi
                         onAction={onAction}
                         currentProfileId={currentProfileId}
                     />
+
+                    
                 ))}
             </section>
         </main>
